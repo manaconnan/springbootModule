@@ -21,13 +21,9 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 public class MainApplication {
 
-    private static Logger logger = LoggerFactory.getLogger(MainApplication.class);
     public static void main(String[] args) {
         SpringApplication app = new SpringApplication(MainApplication.class);
-        //app.setBannerMode(Mode.OFF);
         app.run( args);
-
-        logger.info("===================>start");
 
     }
 }

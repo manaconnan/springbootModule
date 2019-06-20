@@ -7,6 +7,7 @@ package com.alipay.mazexiang.service;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.RequestScope;
 
 /**
  *
@@ -17,15 +18,20 @@ import org.springframework.stereotype.Component;
 @Component
 @Data
 @Slf4j
+@RequestScope
 public class TestBean {
 
     private String name;
 
-    public String sayHello(){
+    private StringBuilder stringBuilder = new StringBuilder();
+
+    public String sayHello(String msg){
+
 
         log.info("TestBean initial_");
+        stringBuilder.append(msg);
 
-        return "TestBean sayHello...";
+        return "TestBean say "+stringBuilder.toString();
     }
 
 }
